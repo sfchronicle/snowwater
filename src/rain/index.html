@@ -17,11 +17,13 @@
         <div class="hed">Northern California rainfall</div>
 
         <div class="chatter">
-          Due to recent storms, seasonal rainfall in the mountains between Lake Tahoe and the Oregon border is at its highest level since the Northern Sierra Eight-Station Precipitation Index was started in 1921.
+          Due to recent storms, cumulative rainfall in the mountains between Lake Tahoe and the Oregon border is at one of its highest levels at this point in the season since the Northern Sierra Eight-Station Precipitation Index was started in 1921.
+          <p class="mobile-instruction">Click on the lines to see which water year they represent.</p>
+          <p class="desktop-instruction">Hover over the lines to see the dates and rainfall levels.</p>
         </div>
 
         <div class="info"></div>
-        <div id="line-chart" class="line-chart"></div>
+        <div id="rain-chart" class="line-chart"></div>
 
         <div class="credit">
           <div class="entry">Emma O'Neill  &bull; <a href="mailto:eoneill@sfchronicle.com">eoneill@sfchronicle.com</a>   &bull; <a href = "https://twitter.com/emmaruthoneill" target="_blank">@emmaruthoneill</a></div>
@@ -32,7 +34,7 @@
     </div>
 
     <script>
-      var snowwaterData = <%= JSON.stringify(csv.raindata_01_10_2017) %>;
+      var snowwaterData = <%= JSON.stringify(csv.historical_raindata_01_11_2017) %>;
     </script>
 
     <script src="../rain-app.js" async></script>

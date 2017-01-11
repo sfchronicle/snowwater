@@ -26,6 +26,17 @@ path {
     fill: none;
 }
 
+#rain-chart {
+  path {
+    stroke-width: 1;
+    opacity: 0.8;
+  }
+  .line-hover {
+    opacity: 1;
+    stroke-width: 6;
+  }
+}
+
 body {
   margin:auto !important;
 }
@@ -183,4 +194,24 @@ text {
 }
 .snow-info {
   margin-right: 30px;
+}
+
+.mobile-instruction, .desktop-instruction {
+  font-size: 14px;
+  @media @mobile {
+    font-size: 13px;
+  }
+}
+
+.mobile-instruction {
+  display: none;
+  @media @mobile {
+    display: block;
+  }
+}
+.desktop-instruction {
+  display: block;
+  @media @mobile {
+    display: none;
+  }
 }
