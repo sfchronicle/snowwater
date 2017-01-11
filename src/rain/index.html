@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= json.project.title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="http://projects.sfchronicle.com/shared/js/responsive-child.js"></script>
+
+    <%= t.include("partials/_head.html") %>
+
+  </head>
+  <body is='responsive-body'>
+
+      <div class="outer">
+        <div class="hed">Northern California rainfall</div>
+
+        <div class="chatter">
+          Due to recent storms, seasonal rainfall in the mountains between Lake Tahoe and the Oregon border is at its highest level since the Northern Sierra Eight-Station Precipitation Index was started in 1921.
+        </div>
+
+        <div class="info"></div>
+        <div id="line-chart" class="line-chart"></div>
+
+        <div class="credit">
+          <div class="entry">Emma O'Neill  &bull; <a href="mailto:eoneill@sfchronicle.com">eoneill@sfchronicle.com</a>   &bull; <a href = "https://twitter.com/emmaruthoneill" target="_blank">@emmaruthoneill</a></div>
+        </div>
+        <div class="source">
+          <em>Data is from <a href="http://cdec.water.ca.gov/snow_rain.html" target="_blank">California Department of Water Resources</a></em>
+        </div>
+    </div>
+
+    <script>
+      var snowwaterData = <%= JSON.stringify(csv.raindata_01_10_2017) %>;
+    </script>
+
+    <script src="../rain-app.js" async></script>
+    <%= t.include("partials/_foot.html") %>
+    <%= t.include("partials/_helloSFC.html") %>
+  </body>
+</html>

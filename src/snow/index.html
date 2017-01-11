@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= json.project.title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <script src="http://projects.sfchronicle.com/shared/js/responsive-child.js"></script>
+
+    <%= t.include("partials/_head.html") %>
+
+  </head>
+  <body is='responsive-body'>
+
+      <div class="outer">
+        <div class="hed">Sierra snowpack</div>
+
+        <div class="chatter">
+          Seasonal snowfall is off to a strong start this year, measuring well above average for the date.  The snowpack, which typically builds through April 1, is important because it provides runoff into California's reservoirs during the dry spring and summer months.
+        </div>
+
+        <div class="snow-info"></div>
+        <div id="line-chart" class="line-chart"></div>
+
+        <div class="credit">
+          <div class="entry">Emma O'Neill  &bull; <a href="mailto:eoneill@sfchronicle.com">eoneill@sfchronicle.com</a>   &bull; <a href = "https://twitter.com/emmaruthoneill" target="_blank">@emmaruthoneill</a></div>
+        </div>
+        <div class="source">
+          <em>Data is from <a href="http://cdec.water.ca.gov/querySWC.html" target="_blank">California Department of Water Resources</a></em>
+        </div>
+    </div>
+
+    <script>
+      var snowwaterData = <%= JSON.stringify(csv.snowwater_01_10_2017) %>;
+    </script>
+
+    <script src="../snow-app.js" async></script>
+    <%= t.include("partials/_foot.html") %>
+    <%= t.include("partials/_helloSFC.html") %>
+  </body>
+</html>
