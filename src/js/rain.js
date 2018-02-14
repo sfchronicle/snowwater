@@ -1,5 +1,14 @@
 var d3 = require('d3');
 
+var windowWidth = $(window).width();
+console.log("window width = ");
+console.log(windowWidth);
+
+window.onresize = function(){
+  windowWidth = $(window).width();
+  location.reload();
+}
+
 // Parse the date / time
 var parseDate = d3.time.format("%m/%d").parse;
 
@@ -28,11 +37,10 @@ var margin = {
   bottom: 50,
   left: 100
 };
+var maxWidth = 700;
 if (screen.width > 768) {
-  var width = 700 - margin.left - margin.right;
   var height = 500 - margin.top - margin.bottom;
 } else if (screen.width <= 768 && screen.width > 480) {
-  var width = 650 - margin.left - margin.right;
   var height = 500 - margin.top - margin.bottom;
 } else if (screen.width <= 480 && screen.width > 340) {
   console.log("big phone");
@@ -42,7 +50,6 @@ if (screen.width > 768) {
     bottom: 35,
     left: 30
   };
-  var width = 340 - margin.left - margin.right;
   var height = 350 - margin.top - margin.bottom;
 } else if (screen.width <= 340) {
   console.log("mini iphone")
@@ -52,10 +59,11 @@ if (screen.width > 768) {
     bottom: 35,
     left: 30
   };
-  var width = 310 - margin.left - margin.right;
   var height = 350 - margin.top - margin.bottom;
 }
 
+var width = Math.min(windowWidth,maxWidth) - 10 - margin.left - margin.right;
+console.log(width);
 
 // create SVG container for chart components
 var svg = d3.select(".line-chart").append("svg")
